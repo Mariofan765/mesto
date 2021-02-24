@@ -1,0 +1,24 @@
+.popup__close {
+  min-width: 40px;
+  min-height: 40px;
+  border: 0;
+  align-self: flex-end;
+  margin: 0;
+  outline-width: 0;
+  margin-top: -40px;
+  margin-right: -40px;
+  background-color: rgba(1, 1, 1, 0);
+  background-image: url('./close_icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 825px) {
+  .popup__close {
+    min-width: 26px;
+    min-height: 26px;
+    margin-top: -40px;
+    margin-right: 0;
+  }
+}
