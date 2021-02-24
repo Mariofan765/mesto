@@ -12,3 +12,9 @@
     font-weight: 900;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
