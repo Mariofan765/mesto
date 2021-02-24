@@ -5,7 +5,7 @@
   grid-template-rows: repeat(2, max-content);
   grid-template-columns: repeat(2, min-content);
   align-items: baseline;
-  padding-top: 22px; 
+  padding-top: 22px;
   justify-items: stretch;
 }
 @media screen and (max-width: 825px) {
