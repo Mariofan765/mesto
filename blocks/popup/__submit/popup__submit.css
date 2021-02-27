@@ -8,6 +8,10 @@
   color: white;
   margin-bottom: 37px;
   cursor: pointer;
+  transition: 0.3s opacity linear;
+}
+.popup__submit:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 825px) {
