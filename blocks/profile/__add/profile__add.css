@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 825px) {
   .profile__add {
     grid-row: 3/4;
     grid-column: 1/2;

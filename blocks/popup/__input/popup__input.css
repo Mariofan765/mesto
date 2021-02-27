@@ -1,4 +1,4 @@
-.popup__name {
+.popup__input {
   min-width: 358px;
   outline-width: 0;
   border: 0;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 825px) {
-  .popup__name {
+  .popup__input {
     min-width: 238px;
     
   }

@@ -9,7 +9,6 @@
 
 @media screen and (max-width: 825px) {
   .elements__block {
-    min-height: 361px;
     max-width: 282px;
     justify-self: center;
   }

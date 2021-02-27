@@ -5,4 +5,5 @@
   padding: 25px 15px 0 21px;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: calc(361px - 336px);
 }

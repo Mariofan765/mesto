@@ -1,5 +1,5 @@
 .popup {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   min-width: 880px;
   min-height: 100%;
   position: fixed;
@@ -11,6 +11,6 @@
 }
 @media screen and (max-width: 825px) {
   .popup {
-    min-width: 320px;
+    min-width: 100%;
   }
 }
