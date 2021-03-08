@@ -4,7 +4,7 @@
   flex-direction: column;
   overflow: hidden;
   background-color: white;
-  
+  position: relative;
 }
 
 @media screen and (max-width: 825px) {

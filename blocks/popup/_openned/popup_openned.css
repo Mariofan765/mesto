@@ -1,3 +1,7 @@
+
 .popup_openned {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+  user-select: contain;
 }
