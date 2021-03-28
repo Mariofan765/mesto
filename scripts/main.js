@@ -1,3 +1,4 @@
+const main = document.querySelector('.page');
 const popup = document.querySelector('.popup');
 const activePopup = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__name');
@@ -73,10 +74,6 @@ initialCards.forEach(function(item) {
   const cardsContainer = document.querySelector('.elements');
   createCard(item.name, item.link, cardsContainer);
 });
-
-
-
-
 function createCards(titleValue, imageValue) {
   const elementsBlock = document.querySelector('#elements__block').content;
   const elementsBlockCopy = elementsBlock.querySelector('.elements__block').cloneNode(true);
@@ -126,5 +123,30 @@ popupAddSubmit.addEventListener('submit', function(evt) {
   closePopupAdd();
 });
 popupImgClose.addEventListener('click', () => closePopup(popupImage));
+popup.addEventListener('mousedown', function(evt) {
+  evt.target.classList.remove('popup_openned');
+});
+popupAdd.addEventListener('mousedown', function(evt) {
+  evt.target.classList.remove('popup_openned');
+});
+popupImage.addEventListener('mousedown', function(evt) {
+  evt.target.classList.remove('popup_openned');
+});
+main.addEventListener('keydown', function(evt) {
+  if (evt.key === 'Escape') {
+    closePopupEdit();
+  }
+})
+main.addEventListener('keydown', function(evt) {
+  if (evt.key === 'Escape') {
+    closePopupAdd();
+  }
+})
+main.addEventListener('keydown', function(evt) {
+  if (evt.key === 'Escape') {
+    closePopup(popupImage);
+  }
+})
+
 
 

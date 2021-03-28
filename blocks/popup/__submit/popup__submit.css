@@ -9,6 +9,7 @@
   margin-bottom: 37px;
   cursor: pointer;
   transition: 0.3s opacity linear;
+  margin-top: 48px;
 }
 .popup__submit:hover {
   opacity: 0.8;
