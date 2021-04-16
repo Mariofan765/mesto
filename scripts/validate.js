@@ -1,5 +1,3 @@
-
-const formInput = document.querySelector('.popup__input');
 const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
@@ -11,17 +9,14 @@ const config = {
 
 const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
-  const buttonElement = Array.from(document.querySelectorAll(config.submitButtonSelector));
-  buttonElement.forEach(function(item) {
-    toggleButtonState(inputList, item);
-  })
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+  toggleButtonState(inputList, buttonElement);
   
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       isValid(formElement, inputElement);
-      buttonElement.forEach(function(item) {
-        toggleButtonState(inputList, item);
-      })
+      toggleButtonState(inputList, buttonElement);
+     
     });
   });
 };
