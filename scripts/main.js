@@ -1,5 +1,6 @@
 const main = document.querySelector('.page');
 const popup = document.querySelector('.popup');
+const popupCont = document.querySelector('.popup__container')
 const activePopup = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__name');
 const profileStatus = document.querySelector('.profile__status');
@@ -49,6 +50,16 @@ const initialCards = [
 
 function openPopup(popup) {
   popup.classList.add('popup_openned'); 
+  popup.addEventListener('mousedown', function(evt) {
+    if(evt.target == popup) {
+      popup.classList.remove('popup_openned');
+    }
+  });
+  main.addEventListener('keydown', function(evt) {
+    if (evt.key === 'Escape') {
+      closePopup(popup)
+    }
+  });
 }
 function activePopupEdit() {
   popupStatus.value = profileStatus.textContent;
@@ -62,7 +73,7 @@ function activePopupAdd() {
 }
 
 function closePopup(popup) {
-  popup.classList.remove('popup_openned'); 
+  popup.classList.remove('popup_openned');
 }
 
 
@@ -87,7 +98,7 @@ function createCards(titleValue, imageValue) {
   elementsBlockCopy.querySelector('.elements__img').addEventListener('click', function(evt) {
     const blockImg = evt.target.getAttribute('src');
     const blockName = elementsBlockCopy.querySelector('.elements__name').textContent;
-    popupImage.classList.add('popup_openned');
+    openPopup(popupImage);
     popupImgName.textContent = blockName;
     popupImg.setAttribute('src', blockImg);
     popupImg.setAttribute('alt', blockName);
@@ -98,12 +109,13 @@ function createCards(titleValue, imageValue) {
   elementImage.setAttribute('alt', titleValue);
   return elementsBlockCopy;
 }
+
+
 function createCard(titleValue, imageValue, container) {
   const element = createCards(titleValue, imageValue);
   container.prepend(element);
   
 }
-
 activePopup.addEventListener('click', activePopupEdit);
 profileAdd.addEventListener('click', activePopupAdd);
 disablePopup.addEventListener('click', closePopupEdit);
@@ -120,33 +132,15 @@ popupAddSubmit.addEventListener('submit', function(evt) {
   const url = document.querySelector('.popup__input_type_image');
   const cardsContainer = document.querySelector('.elements');
   createCard(title.value, url.value, cardsContainer);
+  const submit = Array.from(document.querySelectorAll('.popup__submit'));
+  submit.forEach(function(item) {
+    item.classList.add('popup__submit_inactive');
+  })
   closePopupAdd();
 });
 popupImgClose.addEventListener('click', () => closePopup(popupImage));
-popup.addEventListener('mousedown', function(evt) {
-  evt.target.classList.remove('popup_openned');
-});
-popupAdd.addEventListener('mousedown', function(evt) {
-  evt.target.classList.remove('popup_openned');
-});
-popupImage.addEventListener('mousedown', function(evt) {
-  evt.target.classList.remove('popup_openned');
-});
-main.addEventListener('keydown', function(evt) {
-  if (evt.key === 'Escape') {
-    closePopupEdit();
-  }
-})
-main.addEventListener('keydown', function(evt) {
-  if (evt.key === 'Escape') {
-    closePopupAdd();
-  }
-})
-main.addEventListener('keydown', function(evt) {
-  if (evt.key === 'Escape') {
-    closePopup(popupImage);
-  }
-})
+
+
 
 
 

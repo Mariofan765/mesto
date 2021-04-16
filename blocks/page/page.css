@@ -1,7 +1,8 @@
 .page {
-  max-width: 880px;
   background-color: #000000;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow-x: hidden;
   color: white;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
