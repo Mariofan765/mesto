@@ -74,7 +74,7 @@ function activePopupAdd() {
 
 function closePopup(popup) {
   popup.classList.remove('popup_openned');
-  popup.removeEventListener('keydown', closeByEscape); 
+  main.removeEventListener('keydown', closeByEscape); 
 }
 
 
