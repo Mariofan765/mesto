@@ -1,4 +1,3 @@
-import { Card } from "./card.js";
 import * as Valid from './FormValidator.js'
 const main = document.querySelector('.page');
 const popupProfile = document.querySelector('.popup_profile');
@@ -18,15 +17,13 @@ const popupAddTitle = document.querySelector('.popup__input_type_title');
 const popupAddImage = document.querySelector('.popup__input_type_image');
 const elements = document.querySelector('.elements');
 const popupImage = document.querySelector('.popup_image');
-const popupImg = document.querySelector('.popup__image');
 const popupImgClose = document.querySelector('.popup__close_img');
-const popupImgName = document.querySelector('.popup__name');
 const title = document.querySelector('.popup__input_type_title');
 const url = document.querySelector('.popup__input_type_image');
 const closePopupEdit = () => closePopup(popupProfile);
 const closePopupAdd = () => closePopup(popupAdd);
 export {elements}
-function openPopup(popup) {
+export function openPopup(popup) {
   popup.classList.add('popup_openned'); 
   main.addEventListener('keydown', closeByEscape);
   
@@ -90,6 +87,7 @@ popupImage.addEventListener('mousedown', function(evt) {
 }); 
 
 
+import { Card } from "./card.js";
 
 
 

@@ -1,5 +1,18 @@
 export {Card};
+const main = document.querySelector('.page');
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_openned');
+    closePopup(openedPopup);
+  }
+}
 const elements = document.querySelector('.elements');
+const popupImage = document.querySelector('.popup_image');
+function openPopup(popup) {
+  popup.classList.add('popup_openned'); 
+  main.addEventListener('keydown', closeByEscape);
+  
+}
 const initialCards = [
   {
     name: 'Архыз',
@@ -26,6 +39,8 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+const popupImgName = document.querySelector('.popup__name');
+const popupImg = document.querySelector('.popup__image');
 
 class Card {
   constructor(titleValue, imageValue, template) {
