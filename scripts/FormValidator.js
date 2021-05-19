@@ -1,4 +1,4 @@
-export 
+export {config, FormValidator}
 const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
@@ -28,20 +28,22 @@ class FormValidator {
   _setEventListeners(formElement) {
     const inputList = Array.from(formElement.querySelectorAll(this._inputSelector));
     const buttonElement = formElement.querySelector(this._submitButtonSelector);
-    this._toggleButtonState(inputList, buttonElement);
+    this.toggleButtonState(inputList, buttonElement);
 
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._isValid(formElement, inputElement);
-        this._toggleButtonState(inputList, buttonElement);
+        this.toggleButtonState(inputList, buttonElement);
       })
     })
   }
-  _toggleButtonState(inputList, buttonElement) {
+  toggleButtonState(inputList, buttonElement) {
     if(this._hasIvalidInput(inputList)) {
       buttonElement.classList.add(this._inactiveButtonClass);
+      buttonElement.setAttribute('disabled', 'disabled')
     } else {
       buttonElement.classList.remove(this._inactiveButtonClass);
+      buttonElement.removeAttribute('disabled')
     }
   }
   _hasIvalidInput(inputList) {
@@ -69,5 +71,3 @@ class FormValidator {
     errorElement.textContent='';
   }
 }
-const ttim = new FormValidator(config, config.formSelector);
-ttim.enableValidations()

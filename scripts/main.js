@@ -1,4 +1,6 @@
-import * as Valid from './FormValidator.js'
+import {config, FormValidator} from './FormValidator.js'
+import { Card } from "./card.js";
+export {closePopup, closeByEscape, elements, openPopup};
 const main = document.querySelector('.page');
 const popupProfile = document.querySelector('.popup_profile');
 const activePopup = document.querySelector('.profile__edit');
@@ -22,8 +24,7 @@ const title = document.querySelector('.popup__input_type_title');
 const url = document.querySelector('.popup__input_type_image');
 const closePopupEdit = () => closePopup(popupProfile);
 const closePopupAdd = () => closePopup(popupAdd);
-export {elements}
-export function openPopup(popup) {
+function openPopup(popup) {
   popup.classList.add('popup_openned'); 
   main.addEventListener('keydown', closeByEscape);
   
@@ -44,7 +45,6 @@ function activePopupAdd() {
   popupAddImage.value = '';
   openPopup(popupAdd);
 }
-
 function closePopup(popup) {
   popup.classList.remove('popup_openned');
   main.removeEventListener('keydown', closeByEscape); 
@@ -69,9 +69,9 @@ popupAddClose.addEventListener('click', closePopupAdd);
 popupAddSubmit.addEventListener('submit', function(evt) {
   evt.preventDefault();
   const newCard = new Card(title.value, url.value, elements);
-  newCard.addCard()
+  newCard.getTemplate()
   const submit = popupAdd.querySelector('.popup__submit');
-  submit.classList.add('popup__submit_inactive');
+  submit.toggleButtonState;
   closePopupAdd();
 });
 popupImgClose.addEventListener('click', () => closePopup(popupImage));
@@ -86,8 +86,11 @@ popupImage.addEventListener('mousedown', function(evt) {
   closePopup(evt.target);
 }); 
 
+const enableValidEdit = new FormValidator(config, config.formSelector);
+const enableValidAdd = new FormValidator(config, config.formSelector);
 
-import { Card } from "./card.js";
+enableValidAdd.enableValidations();
+enableValidEdit.enableValidations()
 
 
 
