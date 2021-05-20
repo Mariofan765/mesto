@@ -1,16 +1,13 @@
-export {Card};
-import {closePopup, closeByEscape} from './main.js';
+import {closePopup, closeByEscape, openPopup} from './main.js';
 import {initialCards} from './array.js'
+export {Card};
+
 
 const main = document.querySelector('.page');
 
 const elements = document.querySelector('.elements');
 const popupImage = document.querySelector('.popup_image');
-function openPopup(popup) {
-  popup.classList.add('popup_openned'); 
-  main.addEventListener('keydown', closeByEscape);
-  
-}
+
 
 const popupImgName = document.querySelector('.popup__name');
 const popupImg = document.querySelector('.popup__image');

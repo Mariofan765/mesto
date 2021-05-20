@@ -71,7 +71,7 @@ popupAddSubmit.addEventListener('submit', function(evt) {
   const newCard = new Card(title.value, url.value, elements);
   newCard.getTemplate()
   const submit = popupAdd.querySelector('.popup__submit');
-  submit.toggleButtonState;
+  submit.classList.add(config.inactiveButtonClass);
   closePopupAdd();
 });
 popupImgClose.addEventListener('click', () => closePopup(popupImage));
